@@ -1,0 +1,55 @@
+{
+  "name": "hel1anthu5_tools",
+  "description": "hel1anthu5_tools",
+  "private": true,
+  "version": "1.0.1",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "package": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.tools.Hel1antHu5",
+    "productName": "Hel1antHu5 Tools",
+    "directories": {
+      "output": "build"
+    },
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/",
+      "strictSSL": true
+    },
+    "files": [
+      "src/electron/preload.js",
+      "main.js"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createStartMenuShortcut": true,
+      "createDesktopShortcut": true
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.6.1",
+    "vue": "^3.4.21",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "electron": "^29.1.4",
+    "electron-builder": "^24.13.3",
+    "vite": "^5.1.6"
+  }
+}
